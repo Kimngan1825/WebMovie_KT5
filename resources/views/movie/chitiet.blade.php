@@ -2,7 +2,7 @@
     <x-slot name="title">Chi tiết: {{ $movie->movie_name_vn }}</x-slot>
 
     <x-slot>
-        <div class="row movie-info"> <div class="col-md-3">
+        <div class="row movie-info"> <div class="col-md-4">
                 <img src="{{ asset('storage/'.$movie->image) }}" 
                      alt="{{ $movie->movie_name_vn }}" class="img-fluid rounded"
                     style="width: 100%; height: auto; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
