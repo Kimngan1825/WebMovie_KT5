@@ -15,6 +15,8 @@ Route::get('/theloai/{id}', [App\Http\Controllers\MovieController1::class, 'thel
 // Trang chi tiết phim
 Route::get('/chitiet/{id}', [App\Http\Controllers\MovieController1::class, 'chitiet'])->name('movie.detail');
 
+//Tìm kiếm phim
+Route::post('/timkiem', [MovieController1::class, 'timkiem'])->name('movie.search');
 // Các route quản lý phim
 Route::get('/movie/qlysach', [MovieController2::class, 'movielist'])->name('movielist');
 Route::get('/movie/edit/{id}', [MovieController2::class, 'movieedit'])->name('movieedit');
