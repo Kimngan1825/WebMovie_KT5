@@ -21,7 +21,8 @@
                     <p><b>Mô tả:</b></p>
                     <p>{{ $movie->overview_vn ?? $movie->overview }}</p>
                 </div>
-                <a href="#" class="btn btn-success mt-2">Xem trailer </a>
+                <a href="{{ $movie->trailer }}" target="_blank" class="btn btn-success mt-2">
+                    Xem trailer </a>
             </div>
         </div>
     </x-slot>
