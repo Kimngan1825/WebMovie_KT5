@@ -37,12 +37,13 @@ class MovieController4 extends Controller
             'image' => 'Ảnh đại diện'
         ]);
 
-        // Upload ảnh và lấy đường dẫn lưu vào thư mục storage/app/public/posters
-        $imagePath = $request->file('image')->store('posters', 'public');
+        // Upload ảnh và lấy đường dẫn lưu vào thư mục storage/app/public/images
+        $imagePath = $request->file('image')->store('images', 'public');
 
-        // Lưu thông tin vào Database
-        Movie::create([
+        // Lưu thông tin thẳng vào Database bằng Query Builder (Không cần Model)
+        DB::table('movie')->insert([
             'movie_name'    => $request->movie_name,
+            'original_name'    => $request->movie_name,
             'movie_name_vn' => $request->movie_name_vn,
             'release_date'  => $request->release_date,
             'overview_vn'   => $request->overview_vn,
