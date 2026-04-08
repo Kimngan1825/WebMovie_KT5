@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{$title}}</title>
+        <title>{{ $title ?? 'Movie App' }}</title>
         <link rel="stylesheet" href="{{asset('library/bootstrap.min.css')}}">
 
         <script src="{{asset('library/jquery.slim.min.js')}}"></script>
@@ -89,10 +89,10 @@
     </head>
     <body>
         <header style='text-align:center'>
-            <div class='banner'>
+            <div class='banner' style="background: url('{{ asset('images/banner.jpg') }}')">
                 <div style="padding:20px 20px">
                     <h2>Welcome.</h2>
-                    <h3>Millions of movies, TV shows and people to discover. Explore now.
+                        <h3>Millions of movies, TV shows and people to discover. Explore now.
                 </div>
                 <div class='search-input'>
                     <form method="post" action="{{url('/timkiem')}}">
