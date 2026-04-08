@@ -18,11 +18,17 @@ class MovieController1 extends Controller
         ->get();
 
     return view('movie.index', compact('movies'));
-}
+    }
 
     // Chi tiết phim 
     public function chitiet($id) {
         $movie = DB::table('movie')->where('id', $id)->first(); 
         return view('movie.chitiet', compact('movie'));
     }
+
+    public function timkiem(Request $request) {
+        $keyword = $request->keyword;
+        $movies = DB::select("select * from movie where movie_name_vn like ? or original_name like ?", ["%".$keyword."%", "%".$keyword."%"]);
+        return view('movie.index', compact('movies'));
+}
 }
