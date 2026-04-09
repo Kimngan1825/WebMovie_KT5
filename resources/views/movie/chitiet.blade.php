@@ -3,7 +3,7 @@
 
     <x-slot>
         <div class="row" style="margin-top: 20px;"> <div class="col-md-4">
-            <img src="{{ asset('storage/'.$movie->image) }}" 
+            <img src="{{ asset('storage/images'.$movie->image) }}" 
                 alt="{{ $movie->movie_name_vn }}" 
                 class="img-fluid rounded" 
                 style="width: 100%; display: block;">
