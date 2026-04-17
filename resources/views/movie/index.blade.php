@@ -4,7 +4,7 @@
     <x-slot> 
         <div class="list-movie"> @foreach($movies as $row)
                 <div class="movie"> <a href="{{ url('/chitiet/'.$row->id) }}">
-                        <img src="{{ asset('storage/'.$row->image) }}" 
+                        <img src="{{ asset('storage/images/'.$row->image) }}" 
                              alt="{{ $row->movie_name_vn }}" 
                              style="width:100%">
                         

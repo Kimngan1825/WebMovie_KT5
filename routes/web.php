@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenRouterController;
+use App\Http\Controllers\MovieController4;
+
+Route::get('/', [App\Http\Controllers\MovieController4::class, 'index']);
+
+Route::get('/openrouter', [OpenRouterController::class, 'chat']);
 use App\Http\Controllers\MovieController1;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\MovieController2;
@@ -15,6 +20,8 @@ Route::get('/theloai/{id}', [App\Http\Controllers\MovieController1::class, 'thel
 // Trang chi tiết phim
 Route::get('/chitiet/{id}', [App\Http\Controllers\MovieController1::class, 'chitiet'])->name('movie.detail');
 
+Route::get('/movies/create', [MovieController4::class, 'create'])->name('movies.create');
+Route::post('/movies/store', [MovieController4::class, 'store'])->name('movies.store');
 //Tìm kiếm phim
 Route::post('/timkiem', [MovieController1::class, 'timkiem'])->name('movie.search');
 // Các route quản lý phim
